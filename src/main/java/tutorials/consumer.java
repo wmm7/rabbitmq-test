@@ -1,0 +1,63 @@
+package tutorials;
+
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
+public class consumer {
+
+  //声明交换器
+  static String exchangeName = "hello-exchange";
+  //声明路由key
+  static String routingKey = "hello";
+
+  static String queueName = "hello-test";
+
+  public static void main(String[] args) throws IOException, TimeoutException {
+    ConnectionFactory factory = new ConnectionFactory();
+//    factory.setUsername("guest");
+//    factory.setPassword("guest");
+    factory.setHost("localhost");
+    //建立到代理服务器到连接
+    Connection conn = factory.newConnection();
+    //获得信道
+    final Channel channel = conn.createChannel();
+    //声明交换器
+//    channel.exchangeDeclare(exchangeName, "direct", true);
+    //声明队列
+//    String queueName = channel.queueDeclare().getQueue();
+    //绑定队列，通过路由键将队列和交换器绑定起来
+    channel.queueBind(queueName, exchangeName, routingKey);
+
+    while(true) {
+      //消费消息
+      boolean autoAck = false; //是否自动确认
+      String consumerTag = "";
+      channel.basicConsume(queueName, autoAck, consumerTag, new DefaultConsumer(channel) {
+        @Override
+        public void handleDelivery(String consumerTag,
+                                   Envelope envelope,
+                                   AMQP.BasicProperties properties,
+                                   byte[] body) throws IOException {
+          String routingKey = envelope.getRoutingKey();
+          String contentType = properties.getContentType();
+          System.out.println("消费的路由键：" + routingKey);
+          System.out.println("消费的内容类型：" + contentType);
+          long deliveryTag = envelope.getDeliveryTag();
+          //确认消息
+          channel.basicAck(deliveryTag, false);
+          System.out.println("消费的消息体内容：");
+          String bodyStr = new String(body, "UTF-8");
+          System.out.println(bodyStr);
+        }
+      });
+    }
+  }
+
+}
