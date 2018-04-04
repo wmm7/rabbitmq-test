@@ -9,7 +9,7 @@ public class Producer {
 
   private static final String EXCHANGE_NAME = "topic";
 
-  private static final String ROUTEING_KEY = "topic.test.1";
+  private static final String ROUTEING_KEY = "topic1";
 
   public static void main(String[] argv) {
     Connection connection = null;

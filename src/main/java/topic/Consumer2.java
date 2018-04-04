@@ -15,7 +15,7 @@ public class Consumer2 {
 
   private static final String EXCHANGE_NAME = "topic";
 
-  private static final String ROUTEING_KEY = "topic.#";
+  private static final String ROUTEING_KEY = "topic.*.*";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
