@@ -15,7 +15,9 @@ public class Consumer2 {
 
   private static final String EXCHANGE_NAME = "direct";
 
-  private static final String ROUTEING_KEY = "direct-1";
+  private static final String BINDING_KEY = "bind-2";
+
+  private static final String QUEUE_NAME = "queue-2";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -24,9 +26,11 @@ public class Consumer2 {
     Channel channel = connection.createChannel();
 
     channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
-    String queueName = channel.queueDeclare().getQueue();
 
-    channel.queueBind(queueName, EXCHANGE_NAME, ROUTEING_KEY);
+    channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+    channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, BINDING_KEY);
+
+    System.out.println(" [consumer 2] bind queue '" + QUEUE_NAME);
 
     Consumer consumer = new DefaultConsumer(channel) {
       @Override
@@ -36,7 +40,7 @@ public class Consumer2 {
         System.out.println(" [consumer 2] Received '" + envelope.getRoutingKey() + "':'" + message + "'");
       }
     };
-    channel.basicConsume(queueName, true, consumer);
+    channel.basicConsume(QUEUE_NAME, true, consumer);
   }
 
 }

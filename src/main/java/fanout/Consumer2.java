@@ -12,21 +12,26 @@ import com.rabbitmq.client.Envelope;
 import java.io.IOException;
 
 public class Consumer2 {
-  private static final String EXCHANGE_NAME = "fanout-test";
+  private static final String EXCHANGE_NAME = "fanout-exchange-2";
 
-  private static final String ROUTEING_KEY = "fanout-2";
+  private static final String BINDING_KEY = "fanout-bind-2";
+
+  private static final String QUEUE_NAME = "fanout-queue-2";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
     factory.setHost("localhost");
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
-
+    //声明交换器（也可以通过插件在页面添加）
     channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
-    String queueName = channel.queueDeclare().getQueue();
-    channel.queueBind(queueName, EXCHANGE_NAME, ROUTEING_KEY);
+    //声明队列（也可以通过插件在页面添加）
+    channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+    //通过绑定键绑定队列和交换器（也可以通过插件在页面添加）
+    channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, BINDING_KEY);
 
-    System.out.println("queueName: " + queueName);
+    System.out.println(" [consumer 2] bind queue '" + QUEUE_NAME);
+
     Consumer consumer = new DefaultConsumer(channel) {
       @Override
       public void handleDelivery(String consumerTag, Envelope envelope,
@@ -36,7 +41,7 @@ public class Consumer2 {
                            + ", exchange : " + envelope.getExchange());
       }
     };
-    channel.basicConsume(queueName, true, consumer);
+    channel.basicConsume(QUEUE_NAME, true, consumer);
   }
 }
 
