@@ -13,25 +13,27 @@ import java.io.IOException;
 
 public class Consumer1 {
 
+  //交换器名称
   private static final String EXCHANGE_NAME = "direct";
-
-  private static final String BINDING_KEY = "bind-1";
-
-  private static final String QUEUE_NAME = "queue-1";
+  //绑定键
+  private static final String BINDING_KEY = "direct-bind-1";
+  //队列名称
+  private static final String QUEUE_NAME = "direct-queue-"+System.currentTimeMillis();
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
     factory.setHost("localhost");
+    //通过AMQP协议创建一个通信信道
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
-
+    //声明交换器
     channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
-
+    //声明队列
     channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+    //通过绑定键将交换器和队列绑定在一起
     channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, BINDING_KEY);
-
     System.out.println(" [consumer 1] bind queue '" + QUEUE_NAME);
-
+    //接收该队列上存储的消息
     Consumer consumer = new DefaultConsumer(channel) {
       @Override
       public void handleDelivery(String consumerTag, Envelope envelope,

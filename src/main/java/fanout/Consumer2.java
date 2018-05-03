@@ -12,15 +12,17 @@ import com.rabbitmq.client.Envelope;
 import java.io.IOException;
 
 public class Consumer2 {
-  private static final String EXCHANGE_NAME = "fanout-exchange-2";
-
-  private static final String BINDING_KEY = "fanout-bind-2";
-
-  private static final String QUEUE_NAME = "fanout-queue-2";
+  //交换器名称
+  private static final String EXCHANGE_NAME = "fanout";
+  //绑定键
+  private static final String BINDING_KEY = "fanout-bind-" + + System.currentTimeMillis();
+  //队列名称
+  private static final String QUEUE_NAME = "fanout-queue-" + System.currentTimeMillis();
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
     factory.setHost("localhost");
+    //通过AMQP协议创建一个通信信道
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
     //声明交换器（也可以通过插件在页面添加）
@@ -29,9 +31,7 @@ public class Consumer2 {
     channel.queueDeclare(QUEUE_NAME, true, false, false, null);
     //通过绑定键绑定队列和交换器（也可以通过插件在页面添加）
     channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, BINDING_KEY);
-
-    System.out.println(" [consumer 2] bind queue '" + QUEUE_NAME);
-
+    System.out.println(" [consumer 2] queue name : " + QUEUE_NAME);
     Consumer consumer = new DefaultConsumer(channel) {
       @Override
       public void handleDelivery(String consumerTag, Envelope envelope,
