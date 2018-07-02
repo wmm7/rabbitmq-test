@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="180a55f8-48b3-4613-b18a-3f160fc2636e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/topic/Producer.java" afterPath="$PROJECT_DIR$/src/main/java/topic/Producer.java" />
-    </list>
+    <list default="true" id="180a55f8-48b3-4613-b18a-3f160fc2636e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +35,8 @@
       <file leaf-file-name="Producer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/topic/Producer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="459">
+              <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -435,12 +433,12 @@
       <workItem from="1523844994617" duration="3240000" />
       <workItem from="1525335975224" duration="5558000" />
       <workItem from="1525402382268" duration="554000" />
-      <workItem from="1530510046489" duration="382000" />
+      <workItem from="1530510046489" duration="404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58933000" />
+    <option name="totallyTimeSpent" value="58955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -806,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/topic/Producer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="459">
+          <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
           <folding />
         </state>
       </provider>
