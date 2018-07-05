@@ -18,7 +18,7 @@ public class Producer {
   private static final String EXCHANGE_NAME_DLX = "exchange-dlx";
 
   //路由键
-  private static final String ROUTEING_KEY = "route-dlx";
+  private static final String ROUTING_KEY = "route-dlx";
 
   //队列名称
   private static final String QUEUE_NAME = "queue-dlx-origin";
@@ -40,12 +40,12 @@ public class Producer {
     channel.queueDeclare(QUEUE_NAME, false, false, false, args);
 
     //通过绑定键将原交换器和队列绑定在一起
-    channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, ROUTEING_KEY);
+    channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, ROUTING_KEY);
 
     String message = "test exchange dlx!";
     //发布消息
-    channel.basicPublish(EXCHANGE_NAME, ROUTEING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
-    System.out.println(" [x] Sent '" + message + "'" + ", ROUTEING_KEY, " + ROUTEING_KEY);
+    channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
+    System.out.println(" [x] Sent message: " + message + ", ROUTING_KEY: " + ROUTING_KEY);
     //关闭通信
     channel.close();
     connection.close();

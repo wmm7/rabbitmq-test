@@ -44,7 +44,7 @@ public class Consumer {
       public void handleDelivery(String consumerTag, Envelope envelope,
                                  AMQP.BasicProperties properties, byte[] body) throws IOException {
         String message = new String(body, "UTF-8");
-        System.out.println(" [consumer 1] Received '" + envelope.getRoutingKey() + ", " + envelope.getExchange() + "':'" + message + "'");
+        System.out.println(" [consumer 1] Received exchange: " + envelope.getExchange() + ", message:" + message);
       }
     };
     channel.basicConsume(QUEUE_NAME, true, consumer);
