@@ -38,6 +38,7 @@ public class Producer {
     args.put("x-message-ttl", TTL);
     args.put("x-dead-letter-exchange", EXCHANGE_NAME_DLX);
     channel.queueDeclare(QUEUE_NAME, false, false, false, args);
+
     //通过绑定键将原交换器和队列绑定在一起
     channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, ROUTEING_KEY);
 
