@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="180a55f8-48b3-4613-b18a-3f160fc2636e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/rabbitmq-test.iml" afterPath="$PROJECT_DIR$/.idea/rabbitmq-test.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/direct/Consumer1.java" afterPath="$PROJECT_DIR$/src/main/java/direct/Consumer1.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/direct/Consumer2.java" afterPath="$PROJECT_DIR$/src/main/java/direct/Consumer2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/direct/Producer.java" afterPath="$PROJECT_DIR$/src/main/java/direct/Producer.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dlx/Consumer.java" afterPath="$PROJECT_DIR$/src/main/java/dlx/Consumer.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dlx/Producer.java" afterPath="$PROJECT_DIR$/src/main/java/dlx/Producer.java" />
     </list>
@@ -20,8 +21,8 @@
       <file leaf-file-name="Producer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dlx/Producer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="47" column="73" lean-forward="false" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
+            <state relative-caret-position="493">
+              <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,11 +33,41 @@
       <file leaf-file-name="Consumer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dlx/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Consumer2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Consumer1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Producer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/direct/Producer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="28" column="50" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="28" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,16 +114,16 @@
         <option value="$PROJECT_DIR$/src/main/java/direct/ReceiveLogsDirect.java" />
         <option value="$PROJECT_DIR$/src/main/java/topic/ReceiveLogsTopic.java" />
         <option value="$PROJECT_DIR$/src/main/java/topic/EmitLogTopic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/direct/Consumer2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/direct/Consumer1.java" />
         <option value="$PROJECT_DIR$/src/main/java/fanout/Consumer2.java" />
         <option value="$PROJECT_DIR$/src/main/java/fanout/Consumer1.java" />
         <option value="$PROJECT_DIR$/src/main/java/topic/Consumer2.java" />
         <option value="$PROJECT_DIR$/src/main/java/topic/Consumer1.java" />
         <option value="$PROJECT_DIR$/src/main/java/topic/Producer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/direct/Producer.java" />
         <option value="$PROJECT_DIR$/src/main/java/fanout/Producer.java" />
         <option value="$PROJECT_DIR$/src/main/java/dlx/Consumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/direct/Consumer2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/direct/Consumer1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/direct/Producer.java" />
         <option value="$PROJECT_DIR$/src/main/java/dlx/Producer.java" />
       </list>
     </option>
@@ -181,6 +212,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dlx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rabbitmq-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rabbitmq-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fanout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -445,12 +484,12 @@
       <workItem from="1530510046489" duration="3308000" />
       <workItem from="1530690351371" duration="676000" />
       <workItem from="1530780989183" duration="4351000" />
-      <workItem from="1530787525821" duration="188000" />
+      <workItem from="1530787525821" duration="491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67074000" />
+    <option name="totallyTimeSpent" value="67377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -504,6 +543,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/topic/Consumer1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -759,13 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -797,20 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fanout/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="3" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tutorials/RPCClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -825,27 +837,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fanout/Producer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/5.2.0/amqp-client-5.2.0.jar!/com/rabbitmq/client/Channel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+        <state relative-caret-position="1853">
+          <caret line="115" column="56" lean-forward="true" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dlx/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Consumer1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/direct/Producer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="50" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="28" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dlx/Producer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="47" column="73" lean-forward="false" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
+        <state relative-caret-position="493">
+          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

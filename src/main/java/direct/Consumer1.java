@@ -18,7 +18,7 @@ public class Consumer1 {
   //绑定键
   private static final String BINDING_KEY = "direct-bind-1";
   //队列名称
-  private static final String QUEUE_NAME = "direct-queue-"+System.currentTimeMillis();
+  private static final String QUEUE_NAME = "direct-queue-1";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -39,7 +39,8 @@ public class Consumer1 {
       public void handleDelivery(String consumerTag, Envelope envelope,
                                  AMQP.BasicProperties properties, byte[] body) throws IOException {
         String message = new String(body, "UTF-8");
-        System.out.println(" [consumer 1] Received '" + envelope.getRoutingKey() + "':'" + message + "'");
+        System.out.println(" [consumer 1] Received routing key: " + envelope.getRoutingKey()
+                           + ", exchange: " + envelope.getExchange() + ", message:" + message);
       }
     };
     channel.basicConsume(QUEUE_NAME, true, consumer);

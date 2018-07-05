@@ -44,8 +44,10 @@ public class Producer {
 
     String message = "test exchange dlx!";
     //发布消息
-    channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
-    System.out.println(" [x] Sent message: " + message + ", ROUTING_KEY: " + ROUTING_KEY);
+    channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN,
+                         message.getBytes("UTF-8"));
+    System.out.println("Sent routing key: " + ROUTING_KEY + ", exchange: " + EXCHANGE_NAME
+                       + ", message: " + message);
     //关闭通信
     channel.close();
     connection.close();
