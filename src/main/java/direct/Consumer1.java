@@ -16,7 +16,7 @@ public class Consumer1 {
   //交换器名称
   private static final String EXCHANGE_NAME = "direct";
   //绑定键
-  private static final String BINDING_KEY = "direct-bind-1";
+  private static final String BINDING_KEY = "direct-route-1";
   //队列名称
   private static final String QUEUE_NAME = "direct-queue-1";
 

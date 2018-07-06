@@ -1,4 +1,4 @@
-package fanout;
+package topic;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.BuiltinExchangeType;
@@ -11,13 +11,13 @@ import com.rabbitmq.client.Envelope;
 
 import java.io.IOException;
 
-public class Consumer1 {
+public class Consumer3 {
   //交换器名称
-  private static final String EXCHANGE_NAME = "fanout";
+  private static final String EXCHANGE_NAME = "topic";
   //绑定键
-  private static final String BINDING_KEY = "fanout-route-1";
+  private static final String BINDING_KEY = "topic.*";
   //队列名称
-  private static final String QUEUE_NAME = "fanout-queue-1";
+  private static final String QUEUE_NAME = "topic-queue-3";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -26,22 +26,21 @@ public class Consumer1 {
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
     //声明交换器（也可以通过插件在页面添加）
-    channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
+    channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC);
     //声明队列（也可以通过插件在页面添加）
     channel.queueDeclare(QUEUE_NAME, true, false, false, null);
     //通过绑定键绑定队列和交换器（也可以通过插件在页面添加）
     channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, BINDING_KEY);
-    System.out.println(" [consumer 1] queue name : " + QUEUE_NAME);
+    System.out.println(" [consumer 3] queue name : " + QUEUE_NAME);
     Consumer consumer = new DefaultConsumer(channel) {
       @Override
       public void handleDelivery(String consumerTag, Envelope envelope,
                                  AMQP.BasicProperties properties, byte[] body) throws IOException {
         String message = new String(body, "UTF-8");
-        System.out.println(" [consumer 1] Received routing key: " + envelope.getRoutingKey()
+        System.out.println(" [consumer 3] Received routing key: " + envelope.getRoutingKey()
                            + ", exchange: " + envelope.getExchange() + ", message:" + message);
       }
     };
     channel.basicConsume(QUEUE_NAME, true, consumer);
   }
 }
-

@@ -11,7 +11,7 @@ public class Producer {
   //交换器名称
   private static final String EXCHANGE_NAME = "fanout";
   //路由键
-  private static final String ROUTEING_KEY = "fanout-route-" + System.currentTimeMillis();
+  private static final String ROUTING_KEY = "fanout-route-1";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -23,8 +23,9 @@ public class Producer {
     channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
     String message = "test exchange fanout!";
     //设置消息可持久化
-    channel.basicPublish(EXCHANGE_NAME, ROUTEING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
-    System.out.println(" [x] Sent '" + message + "'" + ", ROUTEING_KEY, " + ROUTEING_KEY);
+    channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
+    System.out.println("Send routing key: " + ROUTING_KEY + ", exchange: " + EXCHANGE_NAME
+                       + ", message: " + message);
     //关闭通信
     channel.close();
     connection.close();

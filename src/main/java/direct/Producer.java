@@ -11,7 +11,7 @@ public class Producer {
   //交换器名称
   private static final String EXCHANGE_NAME = "direct";
   //路由键
-  private static final String ROUTING_KEY = "direct-bind-1";
+  private static final String ROUTING_KEY = "direct-route-1";
 
   public static void main(String[] argv) throws Exception {
 
@@ -25,7 +25,7 @@ public class Producer {
     String message = "test exchange direct";
     //发送消息，设置消息可持久化
     channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, true,  MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes("UTF-8"));
-    System.out.println("Sent routing key: " + ROUTING_KEY + ", exchange: " + EXCHANGE_NAME
+    System.out.println("Send routing key: " + ROUTING_KEY + ", exchange: " + EXCHANGE_NAME
                        + ", message: " + message);
     //关闭通信
     channel.close();

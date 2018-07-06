@@ -15,9 +15,9 @@ public class Consumer2 {
   //交换器名称
   private static final String EXCHANGE_NAME = "fanout";
   //绑定键
-  private static final String BINDING_KEY = "fanout-bind-" + + System.currentTimeMillis();
+  private static final String BINDING_KEY = "fanout-route-2";
   //队列名称
-  private static final String QUEUE_NAME = "fanout-queue-" + System.currentTimeMillis();
+  private static final String QUEUE_NAME = "fanout-queue-2";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -37,8 +37,8 @@ public class Consumer2 {
       public void handleDelivery(String consumerTag, Envelope envelope,
                                  AMQP.BasicProperties properties, byte[] body) throws IOException {
         String message = new String(body, "UTF-8");
-        System.out.println(" [consumer 2] Received '" + message + "'" + ", route key : " + envelope.getRoutingKey()
-                           + ", exchange : " + envelope.getExchange());
+        System.out.println(" [consumer 2] Received routing key: " + envelope.getRoutingKey()
+                           + ", exchange: " + envelope.getExchange() + ", message:" + message);
       }
     };
     channel.basicConsume(QUEUE_NAME, true, consumer);
