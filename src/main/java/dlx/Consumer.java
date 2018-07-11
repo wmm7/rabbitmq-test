@@ -8,6 +8,8 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,8 +46,10 @@ public class Consumer {
       public void handleDelivery(String consumerTag, Envelope envelope,
                                  AMQP.BasicProperties properties, byte[] body) throws IOException {
         String message = new String(body, "UTF-8");
-        System.out.println(" [consumer] Received routing key: " + envelope.getRoutingKey()
-                           + ", exchange: " + envelope.getExchange() + ", message:" + message);
+        System.out.println(" [consumer 1] Received consumerTag: " + consumerTag
+                           + ", envelope: " + ToStringBuilder.reflectionToString(envelope)
+                           + ", properties: " + ToStringBuilder.reflectionToString(properties)
+                           + ", message:" + message);
       }
     };
     channel.basicConsume(QUEUE_NAME, true, consumer);
